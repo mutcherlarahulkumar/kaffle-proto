@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package token;
 
-option go_package = "kaffle/proto";
+option go_package = "github.com/mutcherlarahulkumar/kaffle-proto/pb;pb";
 
 message GenerateTokenRequest{
     string UserID = 1;
