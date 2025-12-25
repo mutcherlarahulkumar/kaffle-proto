@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package token;
+
+option go_package = "kaffle/proto";
+
+message GenerateTokenRequest{
+    string UserID = 1;
+}
+
+message GenerateTokenResponse{
+    string Token = 1;
+}
+
+message VerifyTokenRequest{
+    string Token = 1;
+}
+
+message VerifyTokenResponse{
+    bool IsValidToken =1;
+    string UserID = 2;
+}
+
+service TokenService{
+    rpc GenerateToken(GenerateTokenRequest) returns (GenerateTokenResponse);
+    rpc VerifyToken(VerifyTokenRequest) returns (VerifyTokenResponse);
+}
